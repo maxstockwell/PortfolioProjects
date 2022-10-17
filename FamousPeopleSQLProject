@@ -1,0 +1,46 @@
+/* Create table about the people and what they do here */
+CREATE TABLE Artists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT,
+    age INTEGER,
+    music_genre TEXT);
+    
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Morgan_Wallen", 28, "country");
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Jelly_Roll", 35, "rap");
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Lil_Wayne", 39, "rap");
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Jason_Aldean", 45, "country");
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Drake", 35, "hip_hop");
+INSERT INTO Artists (full_name, age, music_genre)
+    VALUES ("Hardy", 31, "country");
+    
+SELECT * FROM Artists;
+
+CREATE TABLE stats (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    iTunes_top_song TEXT,
+    Spotify_streams INTEGER,
+    Instagram_followers INTEGER);
+    
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("Whiskey Glasses", "3.7B", "3.4M");
+
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("Save Me", "260M", "815K"); 
+
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("Mona Lisa", "4.8B", "15.1M"); 
+
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("You Make It Easy", "3.3B", "3.7M"); 
+
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("God's Plan", "8.6B", "107M"); 
+
+INSERT INTO stats (iTunes_top_song, Spotify_streams, Instagram_followers) VALUES ("One Beer", "350M", "559K"); 
+
+SELECT * FROM stats;
+
+SELECT Artists.full_name, Artists.music_genre, stats.iTunes_top_song, stats.Spotify_streams, stats.Instagram_followers
+from Artists
+join stats
+on Artists.id = stats.id;
