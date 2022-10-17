@@ -1,0 +1,75 @@
+/* What does the app's SQL look like? */
+
+CREATE TABLE schedule (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    opponent TEXT,
+    date text,
+    final_score INTEGER,
+    victory_margin INTEGER);
+    
+    CREATE TABLE stats (
+    opponent_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    points INTEGER,
+    rebounds INTEGER,
+    assists INTEGER,
+    steals INTEGER);
+    
+INSERT INTO schedule (opponent, date, final_score, victory_margin) VALUES ("Royall", "12-11-2015", "78-57", 78-57);    
+    
+INSERT INTO schedule (opponent, date, final_score, victory_margin) VALUES ("Richland Center", "12-12-2015", "76-64", 76-64);
+
+INSERT INTO schedule (opponent, date, final_score, victory_margin) VALUES ("La Farge", "12-14-2015", "68-35", 68-35);
+
+INSERT INTO schedule (opponent, date, final_score, victory_margin) VALUES ("Wonewoc-Center", "12-17-2015", "83-59", 83-59); 
+
+INSERT INTO schedule (opponent, date, final_score, victory_margin) VALUES ("Kickapoo", "12-22-2015", "73-54", 73-54);
+
+/*data for stats table*/
+
+INSERT INTO stats (points, rebounds, assists, steals) VALUES (22, 11, 7, 3);
+
+INSERT INTO stats (points, rebounds, assists, steals) VALUES (25, 9, 1, 1);
+
+INSERT INTO stats (points, rebounds, assists, steals) VALUES (23, 8, 2, 3);
+
+INSERT INTO stats (points, rebounds, assists, steals) VALUES (36, 11, 3, 1);
+
+INSERT INTO stats (points, rebounds, assists, steals) VALUES (28, 9, 4, 2);
+SELECT * FROM schedule;
+SELECT * FROM stats;
+
+SELECT * FROM schedule WHERE victory_margin > 20 ORDER BY victory_margin;
+
+ALTER TABLE stats ADD fouls INTEGER;
+
+
+UPDATE stats
+SET fouls = 4
+WHERE opponent_id = 1;
+
+UPDATE stats
+SET fouls = 1
+WHERE opponent_id = 2;
+
+UPDATE stats
+SET fouls = 0
+WHERE opponent_id = 3;
+
+UPDATE stats
+SET fouls = 3
+WHERE opponent_id = 4;
+
+UPDATE stats
+SET fouls = 4
+WHERE opponent_id = 5;
+
+SELECT * FROM stats;
+
+UPDATE schedule set opponent = "North Crawford" WHERE id = 5;
+
+
+SELECT * FROM schedule;
+DELETE FROM schedule WHERE victory_margin < 20;
+SELECT * FROM schedule;
+DELETE FROM stats WHERE points < 25;
+SELECT * FROM stats;
