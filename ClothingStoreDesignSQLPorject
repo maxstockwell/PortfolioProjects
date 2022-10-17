@@ -1,0 +1,23 @@
+CREATE TABLE products (id INTEGER, Item TEXT, Inventory INTEGER, Items_Sold INTEGER, Rating INTEGER, Product_Cost INTEGER, Retail_Cost INTEGER);
+
+INSERT INTO products VALUES (1, "Black shirt", 30, 70, 9, 12, 25);
+INSERT INTO products VALUES (2, "White Shirt", 34, 66, 8, 10, 25);
+INSERT INTO products VALUES (3, "Gray Shirt", 37, 63, 6, 12, 25);
+INSERT INTO products VALUES (4, "Black Polo", 71, 29, 8, 14, 35);
+INSERT INTO products VALUES (5, "White Polo", 73, 27, 9, 13, 35);
+INSERT INTO products VALUES (6, "Gray Polo", 79, 21,  6, 14, 35);
+INSERT INTO products VALUES (7, "Black Sweatshirt",43, 107, 8, 21, 55);
+INSERT INTO products VALUES (8, "White Sweatshirt", 44, 106, 8, 20, 55);
+INSERT INTO products VALUES (9, "Gray Sweatshirt", 56, 94, 7, 21, 55);
+INSERT INTO products VALUES (10, "Black Coat", 21, 29, 7, 36, 75);
+INSERT INTO products VALUES (11, "White Coat", 28, 22, 6, 32, 75);
+INSERT INTO products VALUES (12, "Gray Coat", 37, 13, 5, 36, 75);
+INSERT INTO products VALUES (13, "Black Hat", 6, 94, 9, 15, 28);
+INSERT INTO products VALUES (14, "White Hat", 14, 86, 9, 15, 28);
+INSERT INTO products VALUES (15, "Gray Hat", 23, 77, 8, 15, 28);
+
+SELECT * FROM products ORDER BY product_cost;
+
+SELECT sum(Items_sold) FROM products; 
+
+SELECT avg(Rating) FROM products;
